@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="editor_hint">Name</string>
+    <string name="card_text_1">Welcome</string>
+    <string name="card_text_2">Please Enter Your Name</string>
+    <string name="btn_start">Start</string>
+    <string name="question">What country does this flag belong to?</string>
+    <string name="question_number">0/10</string>
+    <string name="option_text">optionText</string>
+    <string name="btn_submit">Submit</string>
+</resources>
