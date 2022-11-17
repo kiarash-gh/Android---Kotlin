@@ -8,17 +8,22 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvInput"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@color/light_grey"
+        android:background="@color/charcoal"
         android:padding="10dp"
         android:textSize="48sp"
+        android:maxLength="12"
+        android:textColor="@color/white"
         android:gravity="end|bottom"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/charcoal"
+        android:padding="2dp"
         android:layout_weight="1">
 
         <Button
@@ -26,7 +31,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_7"/>
 
         <Button
@@ -34,7 +43,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:onClick="onDigit"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_8"/>
 
         <Button
@@ -42,7 +54,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_9"/>
 
         <Button
@@ -50,7 +65,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onOperation"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_divide"/>
 
     </LinearLayout>
@@ -61,6 +79,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/charcoal"
+        android:padding="2dp"
         android:layout_weight="1">
 
         <Button
@@ -68,7 +88,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_4"/>
 
         <Button
@@ -76,7 +99,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_5"/>
 
         <Button
@@ -84,7 +110,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_6"/>
 
         <Button
@@ -92,7 +121,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onOperation"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_multiply"/>
 
     </LinearLayout>
@@ -101,6 +133,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/charcoal"
+        android:padding="2dp"
         android:layout_weight="1">
 
         <Button
@@ -108,7 +142,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_1"/>
 
         <Button
@@ -116,7 +153,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_2"/>
 
         <Button
@@ -124,7 +164,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_3"/>
 
         <Button
@@ -132,7 +175,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onOperation"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_subtract"/>
 
     </LinearLayout>
@@ -140,30 +186,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/charcoal"
+        android:padding="2dp"
         android:layout_weight="1">
 
-        <Button
-            android:id="@+id/btnZero"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:text="@string/btn_0"/>
 
         <Button
             android:id="@+id/btnDot"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDot"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_dot"/>
+
+        <Button
+            android:id="@+id/btnZero"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onDigit"
+            android:background="@drawable/rounded_btn"
+            android:text="@string/btn_0"/>
+
 
         <Button
             android:id="@+id/btnClr"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onClr"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_clear"/>
 
         <Button
@@ -171,7 +230,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:onClick="onOperation"
+            android:background="@drawable/rounded_btn"
             android:text="@string/btn_plus"/>
 
     </LinearLayout>
@@ -181,6 +243,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/charcoal"
+        android:padding="2dp"
         android:layout_weight="1">
 
         <Button
@@ -188,7 +252,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="5dp"
+            android:textSize="25dp"
+            android:background="@drawable/rounded_btn"
+            android:onClick="onEqual"
             android:text="@string/btn_eq"/>
 
 
